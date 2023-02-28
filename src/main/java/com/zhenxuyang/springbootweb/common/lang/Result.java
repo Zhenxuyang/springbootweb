@@ -1,4 +1,4 @@
-package com.zhenxuyang.springbootweb.common;
+package com.zhenxuyang.springbootweb.common.lang;
 
 import lombok.Data;
 
@@ -29,6 +29,15 @@ public class Result implements Serializable {
         m.setData(data);
         return m;
     }
+
+    public static Result succ(int code, String msg, Object data) {
+        Result r = new Result();
+        r.setCode(code);
+        r.setMsg(msg);
+        r.setData(data);
+        return r;
+    }
+
     public static Result fail(String msg){
         Result m = new Result();
         m.setCode(-1);
@@ -42,5 +51,13 @@ public class Result implements Serializable {
         m.setMsg(msg);
         m.setData(data);
         return m;
+    }
+
+    public static Result fail(int code, String msg, Object data) {
+        Result r = new Result();
+        r.setCode(code);
+        r.setMsg(msg);
+        r.setData(data);
+        return r;
     }
 }

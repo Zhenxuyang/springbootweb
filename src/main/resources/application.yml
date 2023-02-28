@@ -6,3 +6,8 @@ spring:
     password: zhen202452
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
+springbootweb:
+  jwt:
+    expire: 604800
+    secret: f4e2g52034348f48b67cde581c0f9ec7
+    header: token

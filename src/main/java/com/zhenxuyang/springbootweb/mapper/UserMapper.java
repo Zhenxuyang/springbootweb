@@ -1,13 +1,16 @@
 package com.zhenxuyang.springbootweb.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zhenxuyang.springbootweb.entity.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @author: zhenxuyang
- * @data: 2023/2/19
- * @time: 23:24
- * @description:
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author zhenxuyang
+ * @since 2023-02-28
  */
 public interface UserMapper extends BaseMapper<User> {
+
 }

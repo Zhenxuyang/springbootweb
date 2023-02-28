@@ -31,7 +31,6 @@ public class CodeGenerator {
                 .globalConfig(builder -> {
                     builder.author("zhenxuyang") // 设置作者
 //                            .enableSwagger() // 开启 swagger 模式
-                            .fileOverride()
                             .outputDir(PROJECT_PATH + JAVA_PATH); // 指定输出目录
                 })
                 .packageConfig(builder -> {
@@ -46,8 +45,13 @@ public class CodeGenerator {
                                     "D:\\project\\springbootweb\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude(Arrays.asList("m_user", "m_blog")) // 设置需要生成的表名
-                            .addTablePrefix("m_"); // 设置过滤表前缀
+                    builder.addInclude(Arrays.asList("m_user")) // 设置需要生成的表名
+                            .addTablePrefix("m_")
+                            .entityBuilder().enableFileOverride()
+                            .serviceBuilder().enableFileOverride()
+                            .mapperBuilder().enableFileOverride()
+                            .controllerBuilder().enableFileOverride()
+                    ; // 设置过滤表前缀
 
                 })
 //                .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
